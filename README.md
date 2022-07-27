@@ -1,2 +1,2 @@
-# streaming-server
+# Streaming server
 A video streaming backend server
