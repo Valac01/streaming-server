@@ -10,12 +10,16 @@ type application struct {
 }
 
 type config struct {
-	uploadLocation string
+	env       string
+	uploadDir string
 }
+
+const version = "1.0.0"
 
 func main() {
 	cfg := &config{}
-	flag.StringVar(&cfg.uploadLocation, "upload-location", "/upload", "folder Name where client uploaded files will reside")
+	flag.StringVar(&cfg.env, "env", "development", "server environment setting (development, production, staging)")
+	flag.StringVar(&cfg.uploadDir, "upload-Dir", "/upload", "folder Name where client uploaded files will reside")
 	flag.Parse()
 	app := application{
 		config: *cfg,
